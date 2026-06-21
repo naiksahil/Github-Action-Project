@@ -79,11 +79,6 @@ jobs:
         cache: maven
     - name: build
       run: mvn package
-      
-  sonarqube:
-    runs-on: self-hosted
-    needs: build
-    steps:
     - uses: actions/checkout@v6
       with:
         # Disabling shallow clones is recommended for improving the relevancy of reporting
