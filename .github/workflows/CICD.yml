@@ -121,3 +121,15 @@ jobs:
           push: true
           tags: sa2000/myapp:latest  
           file: ./Dockerfile
+
+  Image-scan-trivy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scan Docker Hub Image
+        uses: aquasecurity/trivy-action@0.20.0
+        with:
+          image-ref: sa2000/myapp:latest
+          format: table
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+          exit-code: 1
