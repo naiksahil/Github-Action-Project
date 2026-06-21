@@ -123,7 +123,7 @@ jobs:
           file: ./Dockerfile
 
   Image-scan-trivy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Scan Docker Hub Image
         uses: aquasecurity/trivy-action@v0.36.0
