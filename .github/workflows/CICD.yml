@@ -130,6 +130,7 @@ jobs:
         with:
           image-ref: sa2000/myapp:latest
           format: table
-          severity: CRITICAL,HIGH
-          ignore-unfixed: true
+          vuln-type: os
+          scanners: vuln
+
           
