@@ -16,7 +16,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn complie
+      run: mvn compile
       
   Security-check-Trivy:
     runs-on: ubuntu-latest
