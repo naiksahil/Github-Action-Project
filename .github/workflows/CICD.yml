@@ -124,6 +124,7 @@ jobs:
 
   Image-scan-trivy:
     runs-on: self-hosted
+    needs: Build-docker-image
     steps:
       - name: Scan Docker Hub Image
         uses: aquasecurity/trivy-action@v0.36.0
