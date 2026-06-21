@@ -31,5 +31,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install trivy   
     - run: trivy --version
+    - name: Installing Trivy
+      run: trivy fs --severity HIGH,CRITICAL --exit-code 1   
+   
 
     
