@@ -32,8 +32,8 @@ jobs:
           sudo apt-get install trivy   
     - run: trivy --version
     - name: Running Trivy Scan
-      run: trivy fs --scanners vuln --format table -o trivy-report.txt . || true
-
+      run: trivy fs --scanners vuln --offline-scan --format table -o trivy-report.txt
+      
   Code-check-gitleaks:
     runs-on: ubuntu-latest
     needs: Security-check-Trivy
