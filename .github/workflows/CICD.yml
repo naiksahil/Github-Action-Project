@@ -33,7 +33,7 @@ jobs:
     - run: trivy --version
     - name: Running Trivy Scan
       run: trivy fs --scanners vuln --offline-scan --format table -o trivy-report.txt .
-      run: cat trivy-report.txt
+    - run: cat trivy-report.txt
       
   Code-check-gitleaks:
     runs-on: ubuntu-latest
