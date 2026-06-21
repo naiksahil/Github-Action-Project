@@ -20,7 +20,7 @@ jobs:
       
   Security-check-Trivy:
     runs-on: ubuntu-latest
-    needs: build:
+    need: build:
     steps:
     - uses: actions/checkout@v4
     - name: Installing Trivy
