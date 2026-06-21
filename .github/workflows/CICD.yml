@@ -33,6 +33,16 @@ jobs:
     - run: trivy --version
     - name: Running Trivy Scan
       run: trivy fs --scanners vuln --format table -o trivy-report.txt .
+
+  Code-check-gitleaks:
+    runs-on: ubuntu-latest
+    needs: Security-check-Trivy
+    steps:
+    - uses: actions/checkout@v4
+    - name: Installing gitleaks
+      run: sudo apt install gitleaks
+    - name: Code scan using git leaks
+      run: gitleaks detect source .
    
 
     
